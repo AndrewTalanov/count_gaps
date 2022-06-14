@@ -2,9 +2,31 @@ html, body, textarea {
   margin: 0;
   padding: 0;
 }
+/* #169aec */
+
+:root {
+  --percent: 100%;
+}
+
 body {
-  background: linear-gradient(to right top, #e824a3, #169aec);
+  overflow: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  background: #169aec;
   font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+.theme {
+  transition: 1s;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--percent);
+  min-height: 100vh;
+  background:linear-gradient(-45deg, transparent 100vh, #e824a3 0);
+  opacity: 1;
 }
 .wrapper {
   width: 100vw;

@@ -1,4 +1,9 @@
-let button = document.querySelector(".button");
+const button = document.querySelector(".button");
+const answer = document.querySelector(".otvet");
+const root = document.documentElement;
+
+const scales = 100;
+let valueBack;
 
 button.addEventListener("click", () => {
   let tableText = document.querySelector(".textarea").value;
@@ -10,9 +15,12 @@ button.addEventListener("click", () => {
 
   tableText = eval(tableText + 0);
 
-  let otvet = document.querySelector(".otvet");
+  answer.innerHTML = `${tableText}`;
 
-  otvet.innerHTML = `${tableText}`;
+  valueBack = tableText / scales * 100 + '%';
+  
+  console.log(valueBack)
+  root.style.setProperty('--percent', valueBack);
 
 });
 
